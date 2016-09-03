@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cat Clicker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <img src="cat.jpg" alt="Image of a cat" class="catImage">
+    <h2 id="score">Score</h2>
+    <script>
+    var click=0;
+      $('.catImage').click(function() {
+        click = click + 1;
+        $('#score').text(click);
+      });
+    </script>
+  </body>
+</html>
