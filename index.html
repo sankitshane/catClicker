@@ -3,16 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Cat Clicker</title>
+    <style>
+      .cat_main {
+        display: inline;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
-    <img src="cat.jpg" alt="Image of a cat" class="catImage">
-    <h2 id="score">Score</h2>
+    <div class="cats">
+      <div class="cat_main">
+        <img src="cat.jpg" alt="Image of a cat" class="catImage1">
+        <h2 id="score1">Score</h2>
+      </div>
+      <div class="cat_main">
+        <img src="ncat.jpg" alt="Image of a cat" class="catImage2">
+        <h2 id="score2">Score</h2>
+      </div>
+    </div>
+
     <script>
-    var click=0;
-      $('.catImage').click(function() {
-        click = click + 1;
-        $('#score').text(click);
+    var cats = ["Snoofy","Snow"];
+    var click1=0;
+    var click2 = 0;
+
+      $('.cat_main').each(function() {
+        $(this).prepend("<h1>"+ cats.pop() +"</h1>");
+      });
+
+      $('.catImage1').click(function() {
+        click1 = click1 + 1;
+        $('#score1').text(click1);
+      });
+      $('.catImage2').click(function() {
+        click2 = click2 + 1;
+        $('#score2').text(click2);
       });
     </script>
   </body>
