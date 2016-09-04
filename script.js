@@ -26,6 +26,7 @@ var octopus = {
     model.current_cat = model.cats[0];
     catListView.init();
     catView.init();
+    admin_view.init();
   },
   getCurrentCat : function() {
     return model.current_cat;
@@ -39,6 +40,11 @@ var octopus = {
   incrementScore : function() {
     model.current_cat.score++;
     catView.render();
+  },
+  changeModel : function(nam,link,sco) {
+    model.current_cat.name = nam;
+    model.current_cat.url = link;
+    model.current_cat.score = sco;
   }
 };
 
@@ -94,22 +100,25 @@ var catListView = {
 }
 };
 
+var admin_view = {
+  init : function() {
+    $('#admin_content').hide();
+    this.render();
+  },
+  render : function() {
+    $('#admin').click(function() {
+      $('#admin_content').toggle();
+    });
+    $('#submit').click(function() {
+      var nam = $('#c_name').val();
+      var link = $('#c_url').val();
+      var sco = $('#c_score').val();
+      octopus.changeModel(nam,link,sco);
+    });
+  }
+};
+
 octopus.init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 
