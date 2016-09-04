@@ -4,72 +4,22 @@
     <meta charset="utf-8">
     <title>Cat Clicker</title>
     <style>
-      .cat_main {
+      .page_content {
         display: inline;
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
-    <!--<div class="cats">
-      <div class="cat_main">
-        <img src="cat.jpg" alt="Image of a cat" class="catImage1">
-        <h2 id="score1">Score</h2>
+      <div class="page_content">
+        <ul id="list_content">
+        </ul>
       </div>
-      <div class="cat_main">
-        <img src="ncat.jpg" alt="Image of a cat" class="catImage2">
-        <h2 id="score2">Score</h2>
+      <div class="page_content" id="cat">
+        <h2 id="cat_name"></h2>
+        <div id="cat_score"></div>
+        <img src="" alt="A image of a cat" id="cat_img">
       </div>
-    </div>-->
-    <h2 class="score">Score</h2>
-    <script>
-
-    var cats = [{"name":"Snoopy",
-                  "url":"cat.jpg",
-                  "score":0},
-                {"name":"Snow",
-                  "url":"ncat.jpg",
-                  "score":0},
-                {"name":"Cuddles",
-                  "url":"cat1.jpg",
-                  "score":0},
-                {"name":"snuggles",
-                  "url":"cat2.jpeg",
-                  "score":0},
-                {"name":"tiger",
-                  "url":"tiger.png",
-                  "score":0}];
-
-// Let's loop over the numbers in our array
-for (var i = 0; i < cats.length; i++) {
-
-    // This is the number we're on...
-    var cat = cats[i];
-
-    // We're creating a DOM element for the number
-    var elem = document.createElement('div');
-    elem.textContent = cat.name;
-
-    // ... and when we click, alert the value of `num`
-    elem.addEventListener('click', (function(catCopy) {
-        return function() {
-
-            var catscreen = document.createElement('div');
-
-            catscreen.innerHTML += '<h2>'+catCopy.name +'</h2>';
-            catscreen.innerHTML += '<img src="'+catCopy.url+'" alt="A image of the cat" class="catImage">';
-            catCopy.score++;
-            score(catCopy.score);
-            document.body.appendChild(catscreen);
-
-        };
-    })(cat));
-
-    document.body.appendChild(elem);
-};
-function score(a){
-    $('.score').text(a);
-  };
-    </script>
+      <script src="script.js"></script>
   </body>
 </html>
