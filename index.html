@@ -15,10 +15,12 @@
         <ul id="list_content">
         </ul>
       </div>
-      <div class="page_content" id="cat">
-        <h2 id="cat_name"></h2>
-        <div id="cat_score"></div>
-        <img src="" alt="A image of a cat" id="cat_img">
+      <div class="page_content" id="cat" data-bind="with : current_cat ">
+        <h2 id="cat_name" data-bind="text: name"></h2>
+        <div id="cat_score" data-bind="text: score"></div>
+        <img src="" alt="A image of a cat" id="cat_img" data-bind="click : $parent.incrementScore,attr:{src: url}">
+        <div data-bind = "foreach: nicknames">
+        </div>
       </div>
       <button id="admin">Admin</button>
       <div id="admin_content">
@@ -27,6 +29,8 @@
           Score: <input type="number" id="c_score" name="cat_score" placeholder="Cat Score">
           <button id="submit">Submit</button>
       </div>
+      <script type='text/javascript' src='knockout-3.4.0.js'></script>
+      <script src="ko_script.js"></script>
       <script src="script.js"></script>
   </body>
 </html>
