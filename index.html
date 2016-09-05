@@ -12,7 +12,8 @@
   </head>
   <body>
       <div class="page_content">
-        <ul id="list_content">
+        <ul id="list_content" data-bind="forEach : cat_list">
+          <li data-bind="text: name , click: $parent.setcat" ></li>
         </ul>
       </div>
       <div class="page_content" id="cat" data-bind="with : current_cat ">

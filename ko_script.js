@@ -28,6 +28,10 @@ var ViewModel = function() {
   this.incrementScore = function() {
     this.score(this.score() + 1);
   };
+
+  this.setcat = function(clickedcat) {
+    this.current_cat(clickedcat); 
+  };
 }
 
 var Cat = function () {
